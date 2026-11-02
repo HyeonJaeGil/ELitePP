@@ -1,0 +1,11 @@
+# ELite++ on LT-ParkingLot (SC-LIO-SAM sessions). Paths are relative to the working directory.
+dataset_dir: ../dataset/parkinglot   # each session: Scans/NNNNNN.pcd + poses.txt (KITTI)
+output_dir: outputs/parkinglot
+sessions: ["01", "02"]               # processed in order; the first one builds the base map
+seed: 0
+
+registration: {}                     # overrides for elitepp.registration.RegistrationParams
+
+dor:
+  stats: {}                          # overrides for elitepp.dor.StatsParams (re-runs ray casting)
+  classify: {}                       # overrides for elitepp.dor.ClassifyParams (tunable in elitepp-view)

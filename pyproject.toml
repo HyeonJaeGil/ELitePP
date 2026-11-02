@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "elitepp"
+version = "0.1.0"
+description = "ELite++: efficient lifelong LiDAR mapping via window-based registration and Voxel Ratio Maps"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "scipy",
+    "open3d",
+    "torch",
+    "tqdm",
+    "pyyaml",
+    "kiss-matcher",
+]
+
+[project.optional-dependencies]
+viz = ["rerun-sdk", "viser"]
+dev = ["pytest"]
+
+[project.scripts]
+elitepp-run = "elitepp.pipeline:main"
+elitepp-eval = "elitepp.evaluate:main"
+elitepp-view = "elitepp.viz.viewer:main"
+
+[tool.setuptools.packages.find]
+include = ["elitepp*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
