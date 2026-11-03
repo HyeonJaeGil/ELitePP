@@ -19,10 +19,10 @@ log = logging.getLogger("elitepp")
 
 @dataclass
 class RegistrationParams(Params):
-    window_size: int = 50          # scans per query submap
-    stride: int = 50               # scans between window starts (< window_size -> overlap)
+    window_size: int = 200          # scans per query submap
+    stride: int = 100               # scans between window starts (< window_size -> overlap)
     fitness_threshold: float = 0.93  # inlier ratio needed to trust a window
-    map_voxel_size: float = 0.5    # downsampling of submaps and the target map [m]
+    map_voxel_size: float = 0.35    # downsampling of submaps and the target map [m]
     matcher_voxel_size: float = 1.0  # KISS-Matcher voxel size [m]
     first_eval_distance: float = 50.0  # inlier distance before the first trusted window [m]
     eval_distance: float = 2.0     # inlier distance once tracking [m]
