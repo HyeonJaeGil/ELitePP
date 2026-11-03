@@ -20,10 +20,10 @@ is aligned to and merged with the previous lifelong map.
 
 | Name | Default | Meaning |
 |---|---|---|
-| `window_size` | 50 | consecutive scans aggregated into one query submap |
-| `stride` | 50 | scans between window starts; smaller than `window_size` gives overlapping windows whose estimates are averaged |
+| `window_size` | 200 | consecutive scans aggregated into one query submap |
+| `stride` | 100 | scans between window starts; smaller than `window_size` gives overlapping windows whose estimates are averaged |
 | `fitness_threshold` | 0.93 | inlier ratio a window needs to be trusted |
-| `map_voxel_size` | 0.5 | downsampling of submaps and the target map [m] |
+| `map_voxel_size` | 0.35 | downsampling of submaps and the target map [m] |
 | `matcher_voxel_size` | 1.0 | KISS-Matcher voxel size [m] |
 | `first_eval_distance` | 50.0 | inlier distance before any window is trusted [m] (see implementation_notes.md) |
 | `eval_distance` | 2.0 | inlier distance once tracking [m] |
